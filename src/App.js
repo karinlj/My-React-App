@@ -9,13 +9,43 @@ import TodoList from './components/TodoList'
 import Post from './components/Post'
 import Blog from './components/Blog'
 
+import SideDrawer from './components/SideDrawer/SideDrawer';
+import Backdrop from './components/Backdrop/Backdrop';
+
 
 class App extends Component {
+  state = {
+    //SideDrawer closed
+    sideDrawerOpen: false
+  };
+
+  handleToggle = () => {
+    this.setState((prevState) => { //passing func to setState
+      //if close it will open and viceversa
+      return { sideDrawerOpen: !prevState.sideDrawerOpen } //set the opposite
+    })
+  };
+
+  handleBackdropClick = () => {
+    this.setState({ sideDrawerOpen: false });
+  };
   render() {
+    let backdrop;
+    //if SideDrawer open=true
+    if (this.state.sideDrawerOpen) {
+      // passing method as prop 
+      backdrop = <Backdrop clickBackdrop={this.handleBackdropClick} />;
+    }
     return (
       <BrowserRouter>
-        <div className="App">
-          <Navbar />
+        <div className="App" style={{ height: '100%' }}>
+          {/* passing method as props to Navbar */}
+          {/* (no parenthesis to not excecute at once) */}
+          {/* forward the prop to Navbar and from there to ToggleBtn  */}
+          <Navbar handleDrawerClick={this.handleToggle} />
+          <SideDrawer show={this.state.sideDrawerOpen} />
+
+          {backdrop}
           <Header className="header" />
 
           <Switch> {/* only want to match one at a time */}

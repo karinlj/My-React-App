@@ -24,5 +24,8 @@ To run
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
-* Inspiration from [The Net Ninja tutorials](https://www.youtube.com/playlist?list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG) - The Net Ninja
+Inspiration from 
+* [The Net Ninja tutorials](https://www.youtube.com/playlist?list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG)
+ 
+* [Academind tutorials] (https://www.youtube.com/watch?v=l6nmysZKHFU) 
 

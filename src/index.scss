@@ -21,6 +21,10 @@ $themecolorDarkGrey:  #21242c;
 
 $themecolor: #333;
 
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -30,7 +34,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
    background: $themecolorBlue;
-   
+   height: 100%;
 }
 
 code {
@@ -74,32 +78,12 @@ h1, h2, h3, h4, h5 {
     padding: 2rem calc(3.75rem - 15px);
     width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-   
-    ul.links {
-     
-      li {
-        display: inline-block;
-        margin: 0 1rem;
-        @media all and (max-width:$xs-max) {
-          margin: 0 0.8rem;
-        }
-        &:first-of-type {
-          margin-left: 0;
-        }
-        &:last-of-type {
-          margin-right: 0;
-        }
-        a {
-          text-decoration: none;
-          color: #fff;
-        }
-       
-      }
-    }
+   ul {
+     display: none;
+   }
+ 
     h3 {
+      margin-left: 1rem;
       color: $themecolor;
       padding-bottom: 1rem;
       a {
@@ -110,19 +94,17 @@ h1, h2, h3, h4, h5 {
       }
     }
     @media all and (min-width:$md-min) {
-      display: block;
-      width: 20%;
-      position: fixed;
-      height: 100%;
-     // padding: 2rem calc(3.75rem - 15px);
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-      background: $themecolorDarkGrey;
-
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
+      width: 20%;
+      position: fixed;
+      height: 100%;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      background: $themecolorDarkGrey;
       ul.links {
+        display: block;
       
         margin-top: 2rem;
         li {
@@ -130,6 +112,13 @@ h1, h2, h3, h4, h5 {
           margin: 10px 0;
           a {
             color: #fff;
+            &:hover {
+              text-decoration: none;
+              color: #75bff0;
+            }
+            &:active { //when click
+              color: #75bff0;
+            }
             ul li {
               margin: 5px 0 5px 10px;
               font-size: 90%;
@@ -141,6 +130,7 @@ h1, h2, h3, h4, h5 {
         }
       }
       h3 {
+        margin-left: 0;
         color: $themecolorBlue;
       }
     }
