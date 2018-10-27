@@ -15,6 +15,7 @@ const Home = () => {
 
                                 <p>There is now also a fake <strong>blog</strong> with posts from <a className="link" href="https://jsonplaceholder.typicode.com/">jsonplaceholder</a>,
                         where you can click on a post to get that single post.</p>
+                                <p>The <strong>mobile menu</strong> when clicking on hamburger, is sliding in from the left.</p>
                             </div>
                         </div>
                     </div>
