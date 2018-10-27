@@ -26,6 +26,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 Inspiration from 
 * [The Net Ninja tutorials](https://www.youtube.com/playlist?list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG)
- 
-* [Academind tutorials] (https://www.youtube.com/watch?v=l6nmysZKHFU) 
+
+* [Academind tutorials](https://www.youtube.com/watch?v=l6nmysZKHFU) 
 
