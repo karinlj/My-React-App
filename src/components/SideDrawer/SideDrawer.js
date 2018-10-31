@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
 import './SideDrawer.scss';
 
 
@@ -23,7 +23,4 @@ const SideDrawer = props => {
         </nav>
     );
 };
-
-
-
 export default SideDrawer   
