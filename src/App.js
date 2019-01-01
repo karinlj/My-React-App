@@ -26,7 +26,7 @@ class App extends Component {
     });
   };
 
-  handleBackdropClick = () => {
+  handleBackdropAndLinkClick = () => {
     this.setState({ sideDrawerOpen: false });
   };
 
@@ -35,7 +35,7 @@ class App extends Component {
     //if SideDrawer open=true
     if (this.state.sideDrawerOpen) {
       // passing method as prop
-      backdrop = <Backdrop clickBackdrop={this.handleBackdropClick} />;
+      backdrop = <Backdrop clickBackdrop={this.handleBackdropAndLinkClick} />;
     }
     return (
       <BrowserRouter>
@@ -44,11 +44,12 @@ class App extends Component {
           {/* (no parenthesis to not excecute at once) */}
           {/* forward the prop to Navbar and from there to ToggleBtn  */}
           <Navbar handleDrawerClick={this.handleToggle} />
-          <SideDrawer show={this.state.sideDrawerOpen} />
-
+          <SideDrawer
+            show={this.state.sideDrawerOpen}
+            clickLink={this.handleBackdropAndLinkClick}
+          />
           {backdrop}
           <Header className="header" />
-
           <Switch>
             {" "}{/* only want to match one at a time */}
             <Route exact path="/" component={Home} />
@@ -58,7 +59,6 @@ class App extends Component {
             <Route path="/Timer" component={Timer} />
             <Route path="/:post_id" component={Post} />
           </Switch>
-
           <Footer />
         </div>
       </BrowserRouter>

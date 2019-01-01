@@ -6,7 +6,7 @@ const Navbar = props => {
 
   const { totalCounters } = props;
   return (
-    <nav className="navbar navbar-light bg-light">
+    <nav className="navbar navbar-light">
       <a className="navbar-brand" href="#">
         Navbar <span className="badge badge-pill badge-secondary">{totalCounters}</span>
       </a>
