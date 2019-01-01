@@ -88,21 +88,28 @@ class CounterApp extends Component {
           <div className="row">
             <div className="col">
               <h1 className="">Counter</h1>
-              {/* obs!! inte conditional, som if tex */}
-              {/* filter (keep/return) only the counters with value greater than 0 . obs!! length*/}
-              <Navbar
-                totalCounters={this.state.counters.filter(c => c.value > 0).length}
-              />
-              <main className="container">
-                <Counters
-                  /*  pass the list of counters to Counters comp  */
-                  counters={this.state.counters}
-                  onReset={this.handleReset}
-                  onIncrement={this.handleIncrement}
-                  onDecrese={this.handleDecrese}
-                  onDelete={this.handleDelete}
-                />
-              </main>
+
+              <div className="row">
+                <div className="col">
+                  <div className="counter-inner">
+                    {/* obs!! inte conditional, som if tex */}
+                    {/* filter (keep/return) only the counters with value greater than 0 . obs!! length*/}
+                    <Navbar
+                      totalCounters={this.state.counters.filter(c => c.value > 0).length}
+                    />
+                    <main className="container">
+                      <Counters
+                        /*  pass the list of counters to Counters comp  */
+                        counters={this.state.counters}
+                        onReset={this.handleReset}
+                        onIncrement={this.handleIncrement}
+                        onDecrese={this.handleDecrese}
+                        onDelete={this.handleDelete}
+                      />
+                    </main>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

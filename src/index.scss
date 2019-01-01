@@ -13,11 +13,13 @@ $xl-min: 1200px;
 
 $xl-max: 1309px;
 
+$themeBorderRadius: 0.25rem;
+
 //colors
-$themecolorBlue: #2e9ce6;
-$themecolorDarkBlue: #1576b7;
+$themecolorYellow: #dfb13b;
+$themecolorDarkYellow: #af861d;
 $themecolorDarkGrey: #21242c;
-//$linkColor: #a4d4f4;
+$linkColor: #eacb7d;
 
 $themecolor: #333;
 
@@ -32,7 +34,7 @@ body {
     "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: $themecolorBlue;
+  background: $themecolorYellow;
   height: 100%;
 }
 
@@ -76,7 +78,7 @@ h5 {
     }
 
     a {
-      color: #75bff0;
+      color: $linkColor;
     }
   }
 }
@@ -92,10 +94,11 @@ h5 {
 
   h3 {
     margin-left: 1rem;
-    color: $themecolor;
+
     padding-bottom: 1rem;
 
     a {
+      color: $themecolorYellow;
       text-decoration: none;
 
       &:hover {
@@ -151,7 +154,7 @@ h5 {
 
     h3 {
       margin-left: 0;
-      color: $themecolorBlue;
+      color: $themecolorYellow;
     }
   }
 }
@@ -169,6 +172,12 @@ h5 {
       opacity: 0.6;
     }
   }
+}
+
+.counter-inner {
+  background: #fff;
+  padding: 1.25rem;
+  border-radius: 0.25rem;
 }
 
 .timer-section,
@@ -193,11 +202,11 @@ h5 {
 }
 
 .collection {
-  border-radius: .25rem;
-  -webkit-border-radius: .25rem;
-  -moz-border-radius: .25rem;
-  -ms-border-radius: .25rem;
-  -o-border-radius: .25rem;
+  border-radius: $themeBorderRadius;
+  -webkit-border-radius: $themeBorderRadius;
+  -moz-border-radius: $themeBorderRadius;
+  -ms-border-radius: $themeBorderRadius;
+  -o-border-radius: $themeBorderRadius;
 }
 
 .collection-item {
@@ -229,7 +238,7 @@ h5 {
 }
 
 .todo-form {
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   background-color: #fff;
   line-height: 1.5rem;
   padding: 10px 20px;
@@ -278,11 +287,11 @@ h5 {
 
     ul {
       a {
-        color: #75bff0;
+        color: $linkColor;
       }
     }
   }
 
-  background: $themecolorDarkBlue;
+  background: $themecolorDarkYellow;
   color: #fff;
 }

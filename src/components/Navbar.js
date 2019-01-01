@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import ToggleBtn from "./SideDrawer/ToggleBtn";
 
 //functional/stateless component accepting prop
@@ -10,7 +10,9 @@ const Navbar = props =>
       <ToggleBtn click={props.handleDrawerClick} />
     </div>
     <h3>
-      <a className="logo">My React App</a>
+      <a href="/" className="logo">
+        My React App
+      </a>
     </h3>
     <ul className="links">
       <li>
