@@ -1,17 +1,16 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import Navbar from './components/Navbar'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import Home from './components/Home'
-import About from './components/About'
-import TodoList from './components/TodoList'
-import Post from './components/Post'
-import Blog from './components/Blog'
-
-import SideDrawer from './components/SideDrawer/SideDrawer';
-import Backdrop from './components/Backdrop/Backdrop';
-
+import React, { Component } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Home from "./components/Home";
+import About from "./components/About";
+import Post from "./components/Blog/Post";
+import Blog from "./components/Blog/Blog";
+import Timer from "./components/Timer/Timer";
+import CounterApp from "./components/Counter/CounterApp";
+import SideDrawer from "./components/SideDrawer/SideDrawer";
+import Backdrop from "./components/Backdrop/Backdrop";
 
 class App extends Component {
   state = {
@@ -20,25 +19,27 @@ class App extends Component {
   };
 
   handleToggle = () => {
-    this.setState((prevState) => { //passing func to setState
+    this.setState(prevState => {
+      //passing func to setState
       //if close it will open and viceversa
-      return { sideDrawerOpen: !prevState.sideDrawerOpen } //set the opposite
-    })
+      return { sideDrawerOpen: !prevState.sideDrawerOpen }; //set the opposite
+    });
   };
 
   handleBackdropClick = () => {
     this.setState({ sideDrawerOpen: false });
   };
+
   render() {
     let backdrop;
     //if SideDrawer open=true
     if (this.state.sideDrawerOpen) {
-      // passing method as prop 
+      // passing method as prop
       backdrop = <Backdrop clickBackdrop={this.handleBackdropClick} />;
     }
     return (
       <BrowserRouter>
-        <div className="App" style={{ height: '100%' }}>
+        <div className="App" style={{ height: "100%" }}>
           {/* passing method as props to Navbar */}
           {/* (no parenthesis to not excecute at once) */}
           {/* forward the prop to Navbar and from there to ToggleBtn  */}
@@ -48,11 +49,13 @@ class App extends Component {
           {backdrop}
           <Header className="header" />
 
-          <Switch> {/* only want to match one at a time */}
-            <Route exact path='/' component={Home} />
-            <Route path='/TodoList' component={TodoList} />
+          <Switch>
+            {" "}{/* only want to match one at a time */}
+            <Route exact path="/" component={Home} />
             <Route path="/Blog" component={Blog} />
-            <Route path='/about' component={About} />
+            <Route path="/about" component={About} />
+            <Route path="/counter" component={CounterApp} />
+            <Route path="/Timer" component={Timer} />
             <Route path="/:post_id" component={Post} />
           </Switch>
 
